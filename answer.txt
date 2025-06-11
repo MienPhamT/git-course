@@ -1,0 +1,10 @@
+1. Câu lệnh để cài đặt email và name khi setup git:
+
+- Cài đặt cho toàn bộ các project Git trên máy:
+  git config --global user.name "Your Name"
+  git config --global user.email "youremail@example.com"
+
+- Cài đặt cho specific project: --> Thực hiện lệnh này bên trong thư mục project đã git init.
+  git config user.name "Your Name"
+  git config user.email "youremail@example.com"
+
