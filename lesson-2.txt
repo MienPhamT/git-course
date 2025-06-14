@@ -1,0 +1,28 @@
+1. 
+- git init: Khởi tạo 1 git repo
+- git add <file_name>: Add 1 file vào vùng staging
+- git add .: Add toàn bộ file trong working directory vào vùng staging
+- git commit -m "msg": tạo commit với các file trong vùng staging vào repo
+2. 
+a. Tạo 3 file: file1, file2, file3 
+   -> 3 file đang ở thư mục làm việc nhưng chưa khởi tạo git -> chưa ở vùng nào của git
+b. Chạy lệnh: git init
+   -> Working directory: file1, file2, file3
+   -> Staging: empty
+   -> Repository: empty
+c. Chạy lệnh: git commit -m”init project”
+   -> Working directory: file1, file2, file3
+   -> Staging: empty
+   -> Repository: empty
+d. Chạy lệnh: git add file1
+   -> Working directory: file2, file3
+   -> Staging: file1
+   -> Repository: empty
+e. Chạy lệnh: git commit -m”add file1”
+   -> Working directory: file2, file3
+   -> Staging: empty
+   -> Repository: file1
+f. Chạy lệnh: git add file
+   -> Working directory: file2, file3
+   -> Staging: empty
+   -> Repository: file1
