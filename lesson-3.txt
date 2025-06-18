@@ -1,0 +1,85 @@
+1. 
+- git commit --amend:  Sửa lại commit cuối cùng (chưa push)
+    - Sửa nội dung commit (thêm/ xoá file vừa staged)
+    - Sửa message commit
+    -> Git sẽ mở message editor, có thể sửa message hoặc giữ nguyên
+
+- git commit --amend -m”<message>”: Sửa lại commit cuối cùng (chưa push) ngay trong terminal, không cần mở editor
+    -> Dùng khi chỉ muốn đổi message commit trước (không đổi nội dung file)
+
+- git restore --staged <file>: Bỏ file ra khỏi vùng Staging, trả file về working directory.
+
+- git reset HEAD~1: Gỡ bỏ commit gần nhất, đưa từ vùng repository về working directory (HEAD~x -> x tương ứng với x commit gần nhất)
+
+2. 
+a. Tạo 3 file: file1, file2, file3
+    - Working Directory: empty
+    - Staging: empty
+    - Repository: empty
+
+b. Chạy lệnh: git init
+    - Working Directory: file1, file2, file3
+    - Staging: empty
+    - Repository: empty
+
+c. Chạy lệnh: git commit -m”init project”
+    - Working Directory: file1, file2, file3
+    - Staging: empty
+    - Repository: empty
+
+d. Chạy lệnh: git add file1
+    - Working Directory: file1, file2, file3
+    - Staging: file1
+    - Repository: empty
+
+e. Chạy lệnh: git commit -m”add file”
+    - Working Directory: file1, file2, file3
+    - Staging: empty
+    - Repository: file1
+
+f. Chạy lệnh: git add .
+    - Working Directory: file1, file2, file3
+    - Staging: file2, file3
+    - Repository: file1
+
+g. Chạy lệnh: git restore --staged file2
+    - Working Directory: file1, file2, file3
+    - Staging: file3
+    - Repository: file1
+
+h. Chạy lệnh: git commit -m”add all files”
+    - Working Directory: file1, file2, file3
+    - Staging: empty
+    - Repository: file1, file3
+
+i. Chạy lệnh: git reset HEAD~1
+    - Working Directory: file1, file2, file3
+    - Staging: empty
+    - Repository: file1
+
+3. Tưởng tượng có 1 folder lesson-3-git mới được tạo ra.
+a. Chạy lệnh git init
+    - Working Directory: empty
+    - Staging: empty
+    - Repository: empty
+
+b. Tạo file file1.txt, file2.txt, oops/file3.txt.
+    - Working Directory: file1.txt, file2.txt, oops/file3.txt
+    - Staging: empty
+    - Repository:empty
+
+c. Thêm file .gitignore, thêm vào 2 dòng:
+    i. file1.txt
+    ii. oops/
+    --> 
+    - Working Directory: file1.txt, file2.txt, oops/file3.txt, .gitignore
+    - Staging: empty
+    - Repository: empty 
+d. Chạy lệnh: git add .
+    - Working Directory: file1.txt, file2.txt, oops/file3.txt, .gitignore
+    - Staging: file2.txt, .gitignore
+    - Repository: empty
+e. Chạy lệnh: git commit -m"init project"
+    - Working Directory: file1.txt, file2.txt, oops/file3.txt, .gitignore
+    - Staging: empty
+    - Repository: file2.txt, .gitignore
